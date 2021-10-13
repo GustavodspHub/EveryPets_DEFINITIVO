@@ -1,5 +1,5 @@
 const User = require ("../models/user");
-const bcrypt = require("bcryptjs");
+// const bcrypt = require("bcryptjs");
 
 module.exports = {
     async store(req, res){
@@ -22,7 +22,7 @@ module.exports = {
             return res.status(400).send({error: "Este e-mail já está sendo utilizado"})
         }
 
-        const passwordHashed = bcrypt.hashSync(password);
+        // const passwordHashed = bcrypt.hashSync(password);
 
         user = await User.create({
             cnpj: cnpj,
