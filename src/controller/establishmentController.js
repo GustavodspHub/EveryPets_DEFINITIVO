@@ -1,5 +1,5 @@
-const User = require ("../models/user");
-const bcrypt = require("bcryptjs");
+const User = require ("../models/establishment");
+// const bcrypt = require("bcryptjs");
 
 module.exports = {
     async store(req, res){
@@ -14,7 +14,7 @@ module.exports = {
 
         let user = await User.findone({
             where: {
-                establishment_name: establishment_name
+                email: email
             }
         });
 
@@ -22,7 +22,7 @@ module.exports = {
             return res.status(400).send({error: "Este e-mail já está sendo utilizado"})
         }
 
-        const passwordHashed = bcrypt.hashSync(password);
+        // const passwordHashed = bcrypt.hashSync(password);
 
         user = await User.create({
             cnpj: cnpj,
@@ -36,7 +36,7 @@ module.exports = {
         res.send({
             user : {
                 id: user.id,
-                establishment_name : user.establishment_name,
+                email : user.email,
                 password : user.password
             }
         });

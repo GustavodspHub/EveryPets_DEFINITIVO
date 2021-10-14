@@ -8,18 +8,22 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       road: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       number: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       complement: {
         type: Sequelize.STRING
       },
       neighborhood: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       cep: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {

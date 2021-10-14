@@ -9,21 +9,26 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       cnpj: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       establishment_name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       password: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       image: {
         type: Sequelize.STRING
       },
       responsible_name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       email: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {

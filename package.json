@@ -4,7 +4,7 @@
     "express": "^4.17.1",
     "mysql2": "^2.3.0",
     "nodemon": "^2.0.13",
-    "sequelize": "^6.6.5"
+    "sequelize": "^6.7.0"
   },
   "name": "tcc-every-pets",
   "version": "1.0.0",
@@ -13,7 +13,7 @@
   "author": "Gustavo Pereira",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon  src/server.js"
+    "start": "nodemon src/server.js"
   },
   "devDependencies": {
     "sequelize-cli": "^6.2.0"
