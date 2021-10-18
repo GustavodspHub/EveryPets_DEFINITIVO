@@ -1,9 +1,9 @@
 const Establishment = require("../models/establishment");
 const bcrypt = require("bcryptjs");
-// const { generateToken } = require("../utils");
+const jwt = require("jsonwebtoken");
 
 module.exports = {
-  async find(req, res) {
+  async store(req, res) {
     const { email, password } = req.body;
 
     try {
@@ -13,13 +13,17 @@ module.exports = {
         },
       });
 
+      const result = bcrypt.compareSync(password, establishment.password)
+
       if (!establishment || !bcrypt.compareSync(password, establishment.password))
         return res.status(403).send({ error: "Usuário e/ou senha inválidos" });
 
-      const token = generateToken({
-        establishmentId: establishment.id,
-        establishmentName: establishment.name,
-      });
+        const token = jwt.sign(
+          { userId: user.id },
+          auth.secret,
+          {
+            expiresIn: "1h"
+          });
 
       setTimeout(() => {
         res.status(201).send({message: "Bem-vindo ao Everypets", token: token});
