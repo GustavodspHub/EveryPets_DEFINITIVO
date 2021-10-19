@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model, DataTypes
-} = require('sequelize');
+const {Model, DataTypes} = require('sequelize');
 
 class Establishment extends Model {
   static init(sequelize) {

@@ -1,4 +1,5 @@
 const Establishment = require("../models/establishment");
+const auth = require("../config/auth")
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
@@ -19,14 +20,14 @@ module.exports = {
         return res.status(403).send({ error: "Usuário e/ou senha inválidos" });
 
         const token = jwt.sign(
-          { userId: user.id },
+          { establishmentId: establishment.id },
           auth.secret,
           {
             expiresIn: "1h"
           });
 
       setTimeout(() => {
-        res.status(201).send({message: "Bem-vindo ao Everypets", token: token});
+        res.status(201).send({message: "Bem-vindo à Everypets", token: token});
       }, 3000);
 
     } catch (error) {

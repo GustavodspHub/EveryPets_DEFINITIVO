@@ -3,8 +3,6 @@ const bcrypt = require("bcryptjs");
 
 
 module.exports = {
-
-
     async store(req, res) {
         
         try {
