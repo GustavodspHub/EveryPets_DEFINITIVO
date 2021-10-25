@@ -5,7 +5,7 @@ class Establishment extends Model {
   static init(sequelize) {
     super.init(
       {
-        cnpj: DataTypes.STRING,
+        cnpj: DataTypes.NUMBER,
         establishment_name: DataTypes.STRING,
         password: DataTypes.STRING,
         image: DataTypes.STRING,

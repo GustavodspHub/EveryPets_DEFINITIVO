@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 
 module.exports = {
     async store(req, res) {
-        
+        console.log("ok")
         try {
             const {
                 cnpj,

@@ -1,10 +1,15 @@
 const routes = require("express").Router();
 
+
 const establishmentController =  require("./controller/establishmentController");
-const session = require ("./controller/session");
+const sessionConstroller = require ("./controller/session");
+
+routes.post('/session', sessionConstroller.store);
+
+const authMiddleware = require("./middlewares/authorization")
 
 routes.post('/cadastro', establishmentController.store);
-routes.post('/session', session.store)
 
+routes.use(authMiddleware)
 
 module.exports = routes;
